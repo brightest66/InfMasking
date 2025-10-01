@@ -1,0 +1,23 @@
+name: InfMasking
+
+model:
+  _target_: pl_modules.infmasking.InfMasking
+  encoder: # Multi-modal model to be trained
+    _target_: models.inffusion.InfFusion
+    embed_dim: 40
+    fusion: "concat"
+    pool: "cls"
+    n_heads: 8
+    n_layers: 1
+    add_bias_kv: False
+    dropout: 0
+
+  projection: # Projection head
+    _target_: pl_modules.infmasking.InfMasking._build_mlp
+    in_dim: ${model.model.encoder.embed_dim} 
+    mlp_dim: 512
+    out_dim: 256
+
+  loss_kwargs: # InfMasking loss
+    temperature: 0.1
+    mask_lambda: 1
