@@ -20,4 +20,3 @@ model:
 
   loss_kwargs: # CoMM loss
     temperature: 0.1 # Temperature in the objective function
-    jcl_lambda: 2
