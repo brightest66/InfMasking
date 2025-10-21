@@ -17,6 +17,15 @@ class BaseModel(ABC, LightningModule):
     def __init__(self, optim_kwargs: Dict):
         super().__init__()
         self.optim_kwargs = optim_kwargs
+        
+        # initialize the parameters
+        self.epoch = -100
+        self.total_epochs = -100
+        
+    def set_current_epoch(self, epoch):
+        self.epoch = epoch
+    def set_total_epochs(self, total_epochs):
+        self.total_epochs = total_epochs
 
     def configure_optimizers(self):
         optimizer = torch.optim.AdamW(
