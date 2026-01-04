@@ -105,7 +105,7 @@ Linear probing top-1 accuracy (in \%) for classification tasks on Vision\&Touch 
 |---------------|-------|---------------|----------------|
 | $\text{Cross}$         | 2     | $86.3_{\pm0.25}$ | $50.1^\clubsuit$ |
 | $\text{Cross+Self}$    | 2     | $87.6_{\pm0.26}$ | $59.9^\clubsuit$ |
-| $\text{CoMM}$          | 2     | $85.3_{\pm0.84}$ | $63.3_{\pm0.51}$  |
+| $\text{CoMM}$          | 2     | $87.0_{\pm1.77}$ | $63.3_{\pm0.51}$  |
 | $\text{InfMasking (ours)}$ | 2     | $88.5_{\pm0.33}$ | $64.3_{\pm0.9}$   |
 | $\text{CMC}^\clubsuit$ | 3     | $94.1$          | $59.2$           |
 | $\text{CoMM}$          | 3     | **$94.1_{\pm0.17}$** | $64.8_{\pm1.13}$  |
