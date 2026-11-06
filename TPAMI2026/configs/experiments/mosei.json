@@ -1,0 +1,40 @@
+{
+  "fusion_method": "MT",
+  "edim": 120,
+  "multibench_dim": 120,
+  "num_heads": 1,
+  "modalities": [
+    "text",
+    "vision"
+  ],
+  "task": 7,
+  "batch_size": 32,
+  "epochs": 100,
+  "optimizer": "adam",
+  "scheduler": "cosine",
+  "warmup_ratio": 0.0,
+  "warmup_steps": 0,
+  "early_stop_patience": 8,
+  "early_stop_min_delta": 0.0,
+  "cosine_t0_epochs": 4,
+  "cosine_t_mult": 2,
+  "learning_rate": 0.0012,
+  "weight_decay": 0.0001,
+  "mask_ratio": 0.6,
+  "num_mask": 7,
+  "mask_lambda": 0.5,
+  "loss_weights": [
+    5.0,
+    1.0,
+    1.0,
+    0.5
+  ],
+  "MT_attn_dropout": 0.1,
+  "MT2_num_layers": 2,
+  "MT2_mlp_ratio": 4.0,
+  "MT2_dropout": 0.2,
+  "dataset": "mosei",
+  "use_masking": true,
+  "mask_objective": "infmask",
+  "use_single": true
+}
