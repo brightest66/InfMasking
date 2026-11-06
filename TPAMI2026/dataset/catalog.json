@@ -1,0 +1,21 @@
+{
+  "mosi": {
+    "path": "/path/to/mosi/mosi_data.pkl"
+  },
+  "mosei": {
+    "path": "/path/to/mosei/mosei_senti_data.pkl"
+  },
+  "mimic": {
+    "path": "/path/to/mimic/im.pk"
+  },
+  "mami": {
+    "path": "/path/to/mami",
+    "metadata": "/path/to/mami",
+    "bert_model_path": "/path/to/bert-base-uncased"
+  },
+  "mute": {
+    "path": "/path/to/mute",
+    "metadata": "/path/to/mute",
+    "bert_model_path": "/path/to/bert-base-uncased"
+  }
+}

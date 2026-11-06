@@ -1,0 +1,45 @@
+{
+  "group": "multibenchplus",
+  "train_defaults": {
+    "optimizer": "adam",
+    "scheduler": "cosine",
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.0001,
+    "early_stop_patience": 8,
+    "early_stop_min_delta": 0.0,
+    "learning_rate": 0.001,
+    "epochs": 50
+  },
+  "datasets": {
+    "mami": {
+      "loader": {
+        "module": "dataset.multibenchplus",
+        "callable": "mami_get_loader"
+      },
+      "modalities_supported": [
+        "text",
+        "vision"
+      ],
+      "default_modalities": [
+        "text",
+        "vision"
+      ],
+      "batch_size": 16
+    },
+    "mute": {
+      "loader": {
+        "module": "dataset.multibenchplus",
+        "callable": "mute_get_loader"
+      },
+      "modalities_supported": [
+        "text",
+        "vision"
+      ],
+      "default_modalities": [
+        "text",
+        "vision"
+      ],
+      "batch_size": 16
+    }
+  }
+}

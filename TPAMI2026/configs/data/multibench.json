@@ -1,0 +1,80 @@
+{
+  "group": "multibench",
+  "train_defaults": {
+    "optimizer": "adam",
+    "scheduler": "cosine",
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.0001,
+    "early_stop_patience": 8,
+    "early_stop_min_delta": 0.0,
+    "learning_rate": 0.0001,
+    "epochs": 100
+  },
+  "default_loader": {
+    "module": "dataset.multibench",
+    "callable": "multibench_get_loader"
+  },
+  "datasets": {
+    "mosi": {
+      "modalities_supported": [
+        "text",
+        "vision",
+        "audio"
+      ],
+      "default_modalities": [
+        "text",
+        "vision"
+      ],
+      "feature_dims": {
+        "text": 300,
+        "vision": 20,
+        "audio": 5
+      },
+      "set_args": {
+        "edim_from": "multibench_dim"
+      },
+      "batch_size": 32
+    },
+    "mosei": {
+      "modalities_supported": [
+        "text",
+        "vision",
+        "audio"
+      ],
+      "default_modalities": [
+        "text",
+        "vision"
+      ],
+      "feature_dims": {
+        "text": 300,
+        "vision": 35,
+        "audio": 74
+      },
+      "set_args": {
+        "edim_from": "multibench_dim"
+      },
+      "batch_size": 32
+    },
+    "mimic": {
+      "modalities_supported": [
+        "tabular",
+        "atimeseries"
+      ],
+      "default_modalities": [
+        "tabular",
+        "atimeseries"
+      ],
+      "feature_dims": {
+        "tabular": 5,
+        "atimeseries": 12
+      },
+      "loader_kwargs_from_args": {
+        "task": "task"
+      },
+      "set_args": {
+        "edim": 200
+      },
+      "batch_size": 40
+    }
+  }
+}

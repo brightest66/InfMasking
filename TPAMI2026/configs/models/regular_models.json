@@ -1,0 +1,196 @@
+{
+  "fusion_auto_by_num_modalities": {
+    "2": "MT"
+  },
+  "fusion_support": {
+    "MT": {
+      "min_modalities": 2,
+      "max_modalities": 2
+    },
+    "MT2": {
+      "min_modalities": 2,
+      "max_modalities": 2
+    }
+  },
+  "dataset_specs": {
+    "mosi": {
+      "encoders": {
+        "text": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$t_feature_dim",
+            "dim": "$edim"
+          }
+        },
+        "vision": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$v_feature_dim",
+            "dim": "$edim"
+          }
+        },
+        "audio": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$a_feature_dim",
+            "dim": "$edim"
+          }
+        }
+      },
+      "input_adapters": {
+        "text": null,
+        "vision": null,
+        "audio": null
+      },
+      "pooling": {
+        "text": "last",
+        "vision": "last",
+        "audio": "last"
+      }
+    },
+    "mosei": {
+      "encoders": {
+        "text": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$t_feature_dim",
+            "dim": "$edim"
+          }
+        },
+        "vision": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$v_feature_dim",
+            "dim": "$edim"
+          }
+        },
+        "audio": {
+          "class": "Transformer",
+          "kwargs": {
+            "n_features": "$a_feature_dim",
+            "dim": "$edim"
+          }
+        }
+      },
+      "input_adapters": {
+        "text": null,
+        "vision": null,
+        "audio": null
+      },
+      "pooling": {
+        "text": "last",
+        "vision": "last",
+        "audio": "last"
+      }
+    },
+    "mimic": {
+      "encoders": {
+        "tabular": {
+          "class": "MLP",
+          "kwargs": {
+            "indim": "$t_feature_dim",
+            "hiddim": 10,
+            "outdim": 24
+          }
+        },
+        "atimeseries": {
+          "class": "GRU",
+          "kwargs": {
+            "indim": "$a_feature_dim",
+            "hiddim": "$edim"
+          }
+        }
+      },
+      "input_adapters": {
+        "tabular": {
+          "class": "FeaturesInputAdapter",
+          "kwargs": {
+            "n_features": 24,
+            "dim_tokens": "$edim"
+          }
+        },
+        "atimeseries": null
+      },
+      "pooling": {
+        "tabular": "mean",
+        "atimeseries": "last"
+      }
+    },
+    "mami": {
+      "freeze_when_fusion_methods": [
+        "Mult"
+      ],
+      "encoders": {
+        "text": {
+          "class": "BertEncoder",
+          "kwargs": {
+            "model_name": "$bert_model",
+            "freeze": "$freeze"
+          }
+        },
+        "vision": {
+          "class": "TvFeatureExtractor",
+          "kwargs": {
+            "model_name": "resnet152",
+            "freeze": "$freeze"
+          }
+        }
+      },
+      "input_adapters": {
+        "text": null,
+        "vision": {
+          "class": "PatchedInputAdapter",
+          "kwargs": {
+            "num_channels": 2048,
+            "stride_level": 1,
+            "patch_size_full": 1,
+            "dim_tokens": "$edim",
+            "image_size": 7
+          }
+        }
+      },
+      "pooling": {
+        "text": "second",
+        "vision": "mean"
+      }
+    },
+    "mute": {
+      "freeze_when_fusion_methods": [
+        "Mult"
+      ],
+      "encoders": {
+        "text": {
+          "class": "BertEncoder",
+          "kwargs": {
+            "model_name": "$bert_model",
+            "freeze": "$freeze"
+          }
+        },
+        "vision": {
+          "class": "TvFeatureExtractor",
+          "kwargs": {
+            "model_name": "resnet152",
+            "freeze": "$freeze"
+          }
+        }
+      },
+      "input_adapters": {
+        "text": null,
+        "vision": {
+          "class": "PatchedInputAdapter",
+          "kwargs": {
+            "num_channels": 2048,
+            "stride_level": 1,
+            "patch_size_full": 1,
+            "dim_tokens": "$edim",
+            "image_size": 7
+          }
+        }
+      },
+      "pooling": {
+        "text": "second",
+        "vision": "mean"
+      }
+    }
+  }
+}
