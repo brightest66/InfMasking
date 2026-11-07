@@ -38,13 +38,16 @@ If you find this repository useful for your research, please cite the relevant p
 **Journal version (TPAMI 2026):**
 
 ```bibtex
-@article{wen2026infmasking,
-  title={InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning},
-  author={Liangjian Wen and Qun Dai and Jiang Duan and Yong Dai and Jianzhuang Liu and Dongkai Wang and Jun Wang and Fuyuan Cao and Zenglin Xu and Zhao Kang},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+@ARTICLE{11780635,
+  author={Wen, Liangjian and Dai, Qun and Duan, Jiang and Dai, Yong and Liu, Jianzhuang and Wang, Dongkai and Wang, Jun and Cao, Fuyuan and Xu, Zenglin and Kang, Zhao},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={InfMasking: A Unified Variational Framework for Synergistic Multimodal Learning}, 
   year={2026},
-  doi={10.1109/TPAMI.2026.3751348},
-  url={https://doi.org/10.1109/TPAMI.2026.3751348}
+  volume={},
+  number={},
+  pages={1-16},
+  keywords={Modeling;Learning (artificial intelligence);Labeling;Training;Fuses;Accuracy;Educational institutions;Joints;Modules (abstract algebra);Entropy;Multimodal learning;multimodal fusion;synergistic information;self-supervised learning;modality collaboration;masking},
+  doi={10.1109/TPAMI.2026.3751348}
 }
 ```
 
